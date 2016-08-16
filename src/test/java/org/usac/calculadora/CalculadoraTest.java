@@ -107,9 +107,9 @@ public class CalculadoraTest {
     @Test
     public void testLogBaseN(){
         System.out.println("logaritmo base 2 de 8");
-        Calculadora instance = new Calculadora(2, 8);
+        Calculadora instance = new Calculadora(8, 2);
         Double result = instance.logBaseX();
-        assertEquals(result, 3.0, 0.000001);
+        assertEquals(3.0, result, 0.000001);
     }
     
     /**
