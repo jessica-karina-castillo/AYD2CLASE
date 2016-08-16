@@ -100,5 +100,36 @@ public class CalculadoraTest {
         Calculadora instance = new Calculadora(10, 0);
         instance.dividir();
     }
+    
+    /**
+     * Test of logBaseN, of class Calculadora.
+     */
+    @Test
+    public void testLogBaseN(){
+        System.out.println("logaritmo base 2 de 8");
+        Calculadora instance = new Calculadora(2, 8);
+        Double result = instance.logBaseX();
+        assertEquals(result, 3.0, 0.000001);
+    }
+    
+    /**
+     * Test of logBaseN, verifies when the new base is less than equals zero to launch an arithmetic exception.
+     */
+    @Test(expected = ArithmeticException.class)
+    public void testLogBaseN_badBase(){
+        System.out.println("logaritmo base -1 de 10");
+        Calculadora instance = new Calculadora(10, -1);
+        instance.logBaseX();
+    }    
  
+    /**
+     * Test of logBaseN, verifies when the argument is less than equals zero to launch an arithmetic exception.
+     */
+    @Test(expected = ArithmeticException.class)
+    public void testLogBaseN_badArgument(){
+        System.out.println("logaritmo base 10 de 0");
+        Calculadora instance = new Calculadora(0, 10);
+        instance.logBaseX();
+    }
+
 }
