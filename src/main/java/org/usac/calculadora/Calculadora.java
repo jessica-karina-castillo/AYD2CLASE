@@ -60,4 +60,15 @@ public class Calculadora
         return (a + 0.0) / b;
     }
     
+    public Double logBaseX()
+    {
+        if(a <= 0){
+            throw new ArithmeticException("Error, el argumento del logaritmo no puede ser menor que cero.");
+        }
+        if(b <= 0){
+            throw new ArithmeticException("Error, la base del logaritmo no puede ser menor que cero.");
+        }
+        return Math.log10(a) / Math.log10(b);
+    }
+    
 }
