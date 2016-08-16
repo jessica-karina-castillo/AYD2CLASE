@@ -90,5 +90,15 @@ public class CalculadoraTest {
         Double result = instance.dividir();
         assertEquals(expResult, result, 0.000001);
     }
+    
+    /**
+     * Test of dividir method, verifies when the divisor is equal zero to launch an aritmethic exception.
+    */
+    @Test(expected = ArithmeticException.class)
+    public void testDividirEntreCero(){
+        System.out.println("dividir entre cero");
+        Calculadora instance = new Calculadora(10, 0);
+        instance.dividir();
+    }
  
 }
